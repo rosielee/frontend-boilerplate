@@ -1,0 +1,235 @@
+// ========================================
+// values
+// ========================================
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+// ===========================================================
+// fonts
+// ===========================================================
+
+@mixin letterSpacing($size) {
+	@if 	 $size == large	 { letter-spacing: 3px; }
+	@else if $size == medium { letter-spacing: 2px; }
+	@else if $size == small  { letter-spacing: 1px; }
+}
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+	font-size: $size; // Fallback in px
+	font-size: calculateRem($size);
+}
+
+@mixin lineHeight($size) {
+	line-height: $size; // Fallback in px
+	line-height: calculateRem($size);
+}
+
+@mixin letterSpacing($size) {
+	letter-spacing: $size; // Fallback in px
+	letter-spacing: calculateRem($size);
+}
+
+// Example usage...
+
+// --Sass:
+
+// h1 {
+//     @include fontSize(32px);
+// }
+
+// --Output:
+
+// h1 {
+//     font-size: 32px;
+//     font-size: 2rem;
+// }
+
+// ===========================================================
+// circles
+// ===========================================================
+
+@mixin circle($size) {
+	width: $size;
+	height: $size;
+	border-radius: $size;
+}
+
+@mixin psuedoCircle($size) {
+	position: absolute;
+	content: "";
+	@include circle($size);
+	border: ($size / 5) solid #fff;
+	top: 5px;
+	right: -($size * 2);
+}
+
+// ===========================================================
+// prefix solutions
+// ===========================================================
+
+@mixin prefix($name, $value) {
+    -webkit-#{$name}: $value;
+    -moz-#{$name}: $value;
+    // -ms-#{$name}: $value;
+    // -o-#{$name}: $value;
+    #{$name}: $value;
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}
+}
+
+// Example usage...
+
+// --Sass:
+
+// @include placeholder { color: red; }
+
+// --Output:
+
+// ::-webkit-input-placeholder { color: red; }
+//           :-moz-placeholder { color: red; }
+//          ::-moz-placeholder { color: red; }
+//      :-ms-input-placeholder { color: red; }
+
+// ===========================================================
+// responsive
+// ===========================================================
+
+@mixin breakpoint($point) {
+
+	@if $point == desktop {
+		@media
+		screen and (min-device-width: $desktop),
+		screen and (min-width: $desktop) {
+			@content;
+		}
+	}
+
+	@else if $point == tablet {
+		@media
+		screen and (max-width: $tablet) and (min-width: $mini) {
+			@content;
+		}
+	}
+
+	@else if $point == mini {
+		@media
+		screen and (max-width: $mini) and (min-width: $mobile),
+		screen and (max-device-width: $mini) and (min-device-width: $mobile) {
+			@content;
+		}
+	}
+
+	@else if $point == mobile {
+		@media
+		screen and (max-device-width: $mobile),
+		screen and (max-width: $mobile)  {
+			@content;
+		}
+	}
+
+
+	@else if $point == desktop-tablet {
+		@media
+		screen and (max-device-width: $desktop),
+		screen and (max-width: $desktop) {
+			@content;
+		}
+	}
+
+	@else if $point == desktop-mini {
+		@media
+		screen and (max-width: $desktop) and (min-width: $mini),
+		screen and (max-device-width: $desktop) and (min-device-width: $mini) {
+			@content;
+		}
+	}
+
+	@else if $point == desktop-mobile {
+		@media
+		screen and (max-device-width: $desktop),
+		screen and (max-width: $desktop) {
+			@content;
+		}
+	}
+
+
+	@else if $point == tablet-mini {
+		@media
+		screen and (max-width: $tablet) and (min-width: $mobile),
+		screen and (max-device-width: $tablet) and (min-device-width: $mobile) {
+			@content;
+		}
+	}
+
+	@else if $point == tablet-mobile	{
+		@media
+		screen and (max-device-width: $tablet),
+		screen and (max-width: $tablet) {
+			@content;
+		}
+	}
+
+
+	@else if $point == mini-mobile {
+		@media
+		screen and (max-device-width: $mini),
+		screen and (max-width: $mini) {
+			@content;
+		}
+	}
+
+}
+
+// =============================================================
+// animation contructor function
+// =============================================================
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+// @include keyframes(rainbow) {
+//     14%   { background-color: red; }
+//     28%   { background-color: yellow; }
+//     42%   { background-color: pink; }
+//     56%   { background-color: green; }
+//     70%   { background-color: orange; }
+//     84%   { background-color: purple; }
+//     96%   { background-color: blue; }
+// }

@@ -1,0 +1,119 @@
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    // font-family: "oswald";
+}
+
+body {
+    // color: $white;
+    // font-family: "cronospro-semibold";
+}
+
+// ========================================
+// fonts style
+// ========================================
+
+.typo-uppercase {
+    text-transform: uppercase;
+}
+
+// ========================================
+// alignment
+// ========================================
+
+.typo-left {
+    text-align: left;
+}
+
+.typo-right {
+    text-align: right;
+}
+
+.typo-center {
+    text-align: center;
+}
+
+.typo-justify {
+    text-align: justify;
+}
+
+// ========================================
+// colours
+// ========================================
+
+.typo-white {
+    color: $white;
+}
+
+.typo-black {
+    color: $black;
+}
+
+// ========================================
+// font classes
+// ========================================
+
+.f_xxl {
+    font-size: 8vh;
+    line-height: 8vh;
+    @include breakpoint(mobile) {
+        // font-size: 8vh;
+        // line-height: 8vh;
+    }
+}
+
+.f_xl {
+    font-size: 6vh;
+    line-height: 6.3vh;
+    @include breakpoint(mobile) {
+        // font-size: 8vh;
+        // line-height: 8vh;
+    }
+}
+
+.f_l, .f_m {
+    font-size: 2vh;
+    line-height: 2.3vh;
+    @include breakpoint(mobile) {
+        // font-size: 2.5vh;
+        // line-height: 2.8vh;
+    }
+}
+
+.f_s {
+    font-size: 1.5vh;
+    line-height: 1.8vh;
+    @include breakpoint(mobile) {
+        // font-size: 1.5vh;
+        // line-height: 1.8vh;
+    }
+}
+
+// ========================================
+// SIZES
+// ========================================
+
+body {
+    @extend .f_m;
+}
+
+.h1, h1 {
+    @extend .f_xxl;
+}
+
+.h2, h2 {
+    @extend .f_l;
+}
+
+.h3, h3 {
+    @extend .f_l;
+    margin: 1vh 0px;
+}
+
+.typo-underline {
+    text-decoration: underline;
+}

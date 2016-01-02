@@ -1,0 +1,347 @@
+// ========================================
+// hide
+// ========================================
+
+.invisible {
+    opacity: 0;
+}
+
+// ================================================
+// clearfix
+// ================================================
+
+.clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// ================================================
+// lists
+// ================================================
+
+.list-reset,
+.v-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.h-list,
+.h-list-alt,
+.slash-list,
+.pipe-list,
+.arrow-list,
+.tick-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.h-list,
+.v-list,
+.slash-list,
+.pipe-list,
+.arrow-list {
+    zoom: 1;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// ================================================
+// horizontal list
+// ================================================
+
+.h-list li {
+    float: left;
+    margin-right: 1em;
+}
+
+.h-list-alt li {
+    float: right;
+    margin-left: 1em;
+}
+
+
+// ================================================
+// arrow list
+// ================================================
+
+.arrow-list li {
+    display: block;
+    // background: url(/r/i/css_framework/graphics/arrow.gif) no-repeat 0 50%;
+    padding: 0 12px;
+}
+
+
+// ================================================
+// slash list (such / as / breadcrumbs / nav)
+// ================================================
+
+.slash-list {
+    li {
+        float: left;
+        margin-right: 0.5em;
+        &:after {
+            content: '/';
+            pointer-events: none;
+            margin: 0px 0px 0px 0.3em;
+        }
+        &:last-child {
+            &:after {
+                content: '';
+                margin: 0px;
+            }
+        }
+    }
+}
+
+
+// ================================================
+// pipe list (such | as | footer | links)
+// ================================================
+
+.pipe-list {
+    li {
+        float: left;
+        margin-right: 0.5em;
+        &:after {
+            content: '|';
+            pointer-events: none;
+            margin: 0px 0px 0px 0.3em;
+        }
+
+        &:last-child:after {
+            content: '';
+            margin: 0px;
+        }
+    }
+}
+
+// ================================================
+// hide: screenreaders & browsers
+// ================================================
+
+// .hidden {
+//  position: absolute !important;
+//  top: -9999px !important;
+//  left: -9999px !important;
+//  visibility: hidden;
+// }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+    position: relative !important;
+    top: 0px !important;
+    left: 0px !important;
+}
+
+// ================================================
+// hide: visually for browsers
+// ================================================
+
+// Hide only visually, but have it available for screenreaders: by Jon Neal.
+// www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
+
+.vh,
+.v-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.vh.focusable:active,
+.vh.focusable:focus
+.v-hidden.focusable:active,
+.v-hidden.focusable:focus {
+    clip:auto;
+    height:auto;
+    overflow:visible;
+    position:static;
+    width:auto;
+    margin:0;
+}
+
+// ================================================
+// spacing
+// ================================================
+
+// spacing helpers
+// p,m = padding,margin
+// a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+// s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
+
+$sp-xs :  5px;
+$sp-s  : 10px;
+$sp-m  : 20px;
+$sp-l  : 30px;
+$sp-xl : 50px;
+
+.ptxs,.pvxs,.paxs       { padding-top       : $sp-xs; }
+.pts,.pvs,.pas          { padding-top       : $sp-s; }
+.ptm,.pvm,.pam          { padding-top       : $sp-m; }
+.ptl,.pvl,.pal          { padding-top       : $sp-l; }
+.ptxl,.pvxl,.paxl       { padding-top       : $sp-xl; }
+.prxs,.phxs,.paxs       { padding-right     : $sp-xs; }
+.prs,.phs,.pas          { padding-right     : $sp-s; }
+.prm,.phm,.pam          { padding-right     : $sp-m; }
+.prl,.phl,.pal          { padding-right     : $sp-l; }
+.prxl,.phxl,.paxl       { padding-right     : $sp-xl; }
+.pbxs,.pvxs,.paxs       { padding-bottom    : $sp-xs; }
+.pbs,.pvs,.pas          { padding-bottom    : $sp-s; }
+.pbm,.pvm,.pam          { padding-bottom    : $sp-m; }
+.pbl,.pvl,.pal          { padding-bottom    : $sp-l; }
+.pbxl,.pvxl,.paxl       { padding-bottom    : $sp-xl; }
+.plxs,.phxs,.paxs       { padding-left      : $sp-xs; }
+.pls,.phs,.pas          { padding-left      : $sp-s; }
+.plm,.phm,.pam          { padding-left      : $sp-m; }
+.pll,.phl,.pal          { padding-left      : $sp-l; }
+.plxl,.phxl,.paxl       { padding-left      : $sp-xl; }
+.mtxs,.mvxs,.maxs       { margin-top        : $sp-xs; }
+.mts,.mvs,.mas          { margin-top        : $sp-s; }
+.mtm,.mvm,.mam          { margin-top        : $sp-m; }
+.mtl,.mvl,.mal          { margin-top        : $sp-l; }
+.mtxl,.mvxl,.maxl       { margin-top        : $sp-xl; }
+.mrxs,.mhxs,.maxs       { margin-right      : $sp-xs; }
+.mrs,.mhs,.mas          { margin-right      : $sp-s; }
+.mrm,.mhm,.mam          { margin-right      : $sp-m; }
+.mrl,.mhl,.mal          { margin-right      : $sp-l; }
+.mrxl,.mhxl,.maxl       { margin-right      : $sp-xl; }
+.mbxs,.mvxs,.maxs       { margin-bottom     : $sp-xs; }
+.mbs,.mvs,.mas          { margin-bottom     : $sp-s; }
+.mbm,.mvm,.mam          { margin-bottom     : $sp-m; }
+.mbl,.mvl,.mal          { margin-bottom     : $sp-l; }
+.mbxl,.mvxl,.maxl       { margin-bottom     : $sp-xl; }
+.mls,.mhs,.mas          { margin-left       : $sp-s; }
+.mlm,.mhm,.mam          { margin-left       : $sp-m; }
+.mll,.mhl,.mal          { margin-left       : $sp-l; }
+.mlxl,.mhxl,.maxl       { margin-left       : $sp-xl; }
+
+// ================================================
+// absolutes
+// ================================================
+
+.atl, .at,  .atr, .al , .ar, .abl, .ab, .abr,
+.atm, .abm, .amm, .alm, .arm {
+    position: absolute;
+}
+
+.at, .atr, .atl { top: 0px;    }
+.ab, .abr, .abl { bottom: 0px; }
+.al, .atl, .abl { left: 0px;   }
+.ar, .atr, .abr { right: 0px;  }
+
+.atm {
+    left: 50%;
+    top: 0;
+    @include prefix( transform, translateX(-50%) );
+}
+
+.abm {
+    left: 50%;
+    bottom: 0;
+    @include prefix( transform, translateX(-50%) );
+}
+
+.amm {
+    left: 50%;
+    top: 50%;
+    @include prefix( transform, translate(-50%, -50%) );
+}
+
+.alm {
+    left: 0;
+    top: 50%;
+    @include prefix( transform, translateY(-50%) );
+}
+
+.arm {
+    right: 0;
+    top: 50%;
+    @include prefix( transform, translateY(-50%) );
+}
+
+// ================================================
+// images
+// ================================================
+
+.img-rounded {
+    border-radius: 5px;
+}
+
+.img-circle,
+.img-ellipse {
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    padding: 4px;
+    border: 1px solid #DDD;
+}
+
+.img-greyscale,
+.img-grayscale {
+    @include prefix( filter, grayscale(100%) );
+    filter: gray; // IE 6-9
+}
+
+.m-left,
+.fig-left {
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+}
+
+.m-right,
+.fig-right {
+    float: right;
+    margin: 0 0 1.5em 1.5em;
+}
+
+figcaption {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.img-block {
+    width: 100%;
+    display: block;
+}
+
+// ================================================
+// rule
+// ================================================
+
+.rule-top    { border-top:    1px solid #DDD; }
+.rule-bottom { border-bottom: 1px solid #DDD; }
+.rule-left   { border-left:   1px solid #DDD; }
+.rule-right  { border-right:  1px solid #DDD; }
+
+// ================================================
+// vertical align
+// ================================================
+
+.valign {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.valign-inner {
+    display: table-cell;
+    vertical-align: middle;
+}

@@ -1,0 +1,242 @@
+// ================================================
+// responsive
+// ================================================
+
+.notouch-visible,
+.no-touch-visible,
+.touch-visible,
+.landscape-visible,
+.portrait-visible,
+.large-visible,
+.tablet-visible,
+.mini-visible,
+.mobile-visible {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+	visibility: hidden;
+}
+
+
+
+// ================================================
+// large
+// ================================================
+
+@media screen and (min-width: 1200px) {
+
+	.large-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.large-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.large-block {
+		display: block !important;
+	}
+
+}
+
+
+// ================================================
+// desktop
+// ================================================
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+
+	.desktop-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.desktop-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.desktop-block {
+		display: block !important;
+	}
+
+}
+
+
+// ================================================
+// tablet
+// ================================================
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+
+	.tablet-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.tablet-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.tablet-block {
+		display: block !important;
+	}
+
+}
+
+
+
+// ================================================
+// mini
+// ================================================
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+	.mini-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.mini-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.mini-block {
+		display: block !important;
+	}
+
+}
+
+
+
+// ================================================
+// mobile
+// ================================================
+
+@media screen and (max-width: 480px) {
+
+	.mobile-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.mobile-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.mobile-block {
+		display: block !important;
+	}
+
+}
+
+// ================================================
+// orientation
+// ================================================
+
+@media only screen and (orientation: landscape) {
+
+	.landscape-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.landscape-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.landscape-block {
+		display: block !important;
+	}
+
+}
+
+@media only screen and (orientation: portrait) {
+
+	.portrait-hidden {
+		position: absolute !important;
+		top: -9999px !important;
+		left: -9999px !important;
+		visibility: hidden;
+	}
+
+	.portrait-visible {
+		visibility: visible;
+		position: relative !important;
+		top: 0px !important;
+		left: 0px !important;
+	}
+
+	.portrait-block {
+		display: block !important;
+	}
+
+}
+
+// ================================================
+// touch (requires modernizr)
+// ================================================
+
+// Hidden when you have touch
+.touch .touch-hidden {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+	visibility: hidden;
+}
+
+// Visible when you have touch
+.touch .touch-visible {
+	visibility: visible;
+	position: relative !important;
+	top: 0px !important;
+	left: 0px !important;
+}
+
+// Hidden when you do not have touch
+.no-touch .no-touch-hidden,
+.no-touch .notouch-hidden {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+	visibility: hidden;
+}
+
+// Visible when you do not have touch
+.no-touch .no-touch-visible,
+.no-touch .notouch-visible {
+	visibility: visible;
+	position: relative !important;
+	top: 0px !important;
+	left: 0px !important;
+}
