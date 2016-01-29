@@ -5,12 +5,12 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    // font-family: "oswald";
+    // font-family: "...";
 }
 
 body {
-    // color: $white;
-    // font-family: "cronospro-semibold";
+    // color: $black;
+    // font-family: "...";
 }
 
 // ========================================
@@ -57,40 +57,24 @@ body {
 // font classes
 // ========================================
 
-.f_xxl {
-    font-size: 8vh;
-    line-height: 8vh;
-    @include breakpoint(mobile) {
-        // font-size: 8vh;
-        // line-height: 8vh;
-    }
+.f_l {
+    font-size: 26px;
+    line-height: 32px;
 }
 
-.f_xl {
-    font-size: 6vh;
-    line-height: 6.3vh;
-    @include breakpoint(mobile) {
-        // font-size: 8vh;
-        // line-height: 8vh;
-    }
+.f_m {
+    font-size: 18px;
+    line-height: 24px;
 }
 
-.f_l, .f_m {
-    font-size: 2vh;
-    line-height: 2.3vh;
-    @include breakpoint(mobile) {
-        // font-size: 2.5vh;
-        // line-height: 2.8vh;
-    }
+.f_r {
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .f_s {
-    font-size: 1.5vh;
-    line-height: 1.8vh;
-    @include breakpoint(mobile) {
-        // font-size: 1.5vh;
-        // line-height: 1.8vh;
-    }
+    font-size: 12px;
+    line-height: 18px
 }
 
 // ========================================
@@ -102,16 +86,19 @@ body {
 }
 
 .h1, h1 {
-    @extend .f_xxl;
+    @extend .f_l;
 }
 
 .h2, h2 {
-    @extend .f_l;
+    @extend .f_m;
 }
 
 .h3, h3 {
-    @extend .f_l;
-    margin: 1vh 0px;
+    @extend .f_r;
+}
+
+.h4, h4, .h5, h5, .h6, h6 {
+    @extend .f_s;
 }
 
 .typo-underline {

@@ -3,53 +3,17 @@
 // ========================================
 
 .twitter {
-    // custom - insert variable color below
-    background: url($facebook + + $color-svg-end);
-    // white icon below
-    &_w {
-        background: url($twitter + $white + $color-svg-end);
-    }
-    // black icon below
-    &_b {
-        background: url($twitter + $black + $color-svg-end);
-    }
+    background: url( create-svg( $twitter-path, $black ) );
 }
 
 .facebook {
-    // custom - insert variable color below
-    background: url($facebook + + $color-svg-end);
-    // white icon below
-    &_w {
-        background: url($facebook + $white + $color-svg-end);
-    }
-    // black icon below
-    &_b {
-        background: url($facebook + $black + $color-svg-end);
-    }
+    background: url( create-svg( $facebook-path, $black ) );
 }
 
 .instagram {
-    // custom - insert variable color below
-    background: url($instagram + + $color-svg-end);
-    // white icon below
-    &_w {
-        background: url($instagram + $white + $color-svg-end);
-    }
-    // black icon below
-    &_b {
-        background: url($instagram + $black + $color-svg-end);
-    }
+    background: url( create-svg( $instagram-path, $black ) );
 }
 
 .pinterest {
-    // custom - insert variable color below
-    background: url($pinterest + + $color-svg-end);
-    // white icon below
-    &_w {
-        background: url($pinterest + $white + $color-svg-end);
-    }
-    // black icon below
-    &_b {
-        background: url($pinterest + $black + $color-svg-end);
-    }
+    background: url( create-svg( $pinterest-path, $black ) );
 }
