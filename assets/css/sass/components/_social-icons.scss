@@ -3,17 +3,21 @@
 // ========================================
 
 .twitter {
-    background: url( create-svg( $twitter-path, $black ) );
+    background: url( create-svg( $twitter-path, $white, $black ) );
 }
 
 .facebook {
-    background: url( create-svg( $facebook-path, $black ) );
+    background: url( create-svg( $facebook-path, $black, $white ) );
 }
 
 .instagram {
-    background: url( create-svg( $instagram-path, $black ) );
+    background: url( create-svg( $instagram-path, $white, $black ) );
 }
 
 .pinterest {
-    background: url( create-svg( $pinterest-path, $black ) );
+    background: url( create-svg( $pinterest-path, $black, $white ) );
+}
+
+.linkedin {
+    background: url( create-svg( $linkedin-path, $black, $white ) );
 }
