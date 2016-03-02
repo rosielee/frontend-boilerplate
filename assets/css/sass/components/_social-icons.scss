@@ -19,5 +19,21 @@
 }
 
 .linkedin {
-    background: url( create-svg( $linkedin-path, $black, $white ) );
+    background: url( create-svg( $linkedin-path, $white, $black ) );
+}
+
+.twitter,
+.facebook,
+.instagram,
+.pinterest,
+.linkedin {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    margin-right: 10px;
+    border-radius: 3px;
+    &.large {
+        height: 30px;
+        width: 30px;
+    }
 }
