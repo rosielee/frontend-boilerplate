@@ -1,1 +1,14 @@
 *.scssc
+assets/css/.DS_Store
+
+assets/css/compiled/.DS_Store
+
+assets/css/sass/.DS_Store
+
+assets/css/sass/components/.DS_Store
+
+assets/js/.DS_Store
+
+assets/js/dist/.DS_Store
+
+assets/js/lib/.DS_Store
